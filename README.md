@@ -2,10 +2,6 @@
 
 An Electron application with React and TypeScript
 
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
 ## Project Setup
 
 ### Install
@@ -32,3 +28,14 @@ $ npm run build:mac
 # For Linux
 $ npm run build:linux
 ```
+
+### Features
+- [x]  Use React
+- [ ]  Get Environment information
+- [ ]  Check network status in real time
+- [ ]  Read and write local files 
+- [ ]  Execute auto updating
+- [ ]  Crawl anything
+- [ ]  Release compressed files such as zip
+- [ ]  Get local DB such as local/session storage
+- [ ]  Let application run in the background
