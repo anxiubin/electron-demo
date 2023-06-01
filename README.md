@@ -31,7 +31,7 @@ $ npm run build:linux
 
 ### Features
 - [x]  Use React
-- [ ]  Get Environment information
+- [x]  Get Environment information
 - [ ]  Check network status in real time
 - [ ]  Read and write local files 
 - [ ]  Execute auto updating
