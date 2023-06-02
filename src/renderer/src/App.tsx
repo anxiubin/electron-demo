@@ -8,6 +8,7 @@ function App(): JSX.Element {
   const [fileText, setFileText] = useState<string>('')
   const [filePath, setFilePath] = useState<string>('')
   const [crawledData, setCrawledData] = useState<string[]>()
+  const [localDB, setLocalDB] = useState<string>('')
 
   const handleSetEnvironmentInfo = async (): Promise<void> => {
     const result = await window.api.getEnvironmentInformation()
@@ -41,6 +42,15 @@ function App(): JSX.Element {
 
     return () => clearInterval(interval)
   }, [])
+
+  const handleSetLocalStorage = (): void => {
+    window.localStorage.setItem('appName', 'electron demo')
+  }
+
+  const handleGetLocalStorage = (): void => {
+    const result = window.localStorage.getItem('appName') as string
+    setLocalDB(result)
+  }
 
   return (
     <div className="container">
@@ -81,6 +91,15 @@ function App(): JSX.Element {
             ))}
           </ul>
         )}
+      </section>
+      <br />
+      <section>
+        <h1>Use local DB</h1>
+        <button onClick={handleSetLocalStorage}>Set Item </button>
+        <br />
+        <button onClick={handleGetLocalStorage}>Get Item</button>
+        <br />
+        <span>Local Storage Value: {localDB}</span>
       </section>
     </div>
   )

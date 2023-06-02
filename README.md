@@ -35,7 +35,7 @@ $ npm run build:linux
 - [x]  Check network status in real time
 - [x]  Read and write local files 
 - [ ]  Execute auto updating
-- [ ]  Crawl anything
+- [x]  Crawl anything
 - [ ]  Release compressed files such as zip
-- [ ]  Get local DB such as local/session storage
+- [ ]  Use local DB such as local/session storage
 - [ ]  Let application run in the background
