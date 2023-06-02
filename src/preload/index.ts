@@ -4,7 +4,9 @@ import { electronAPI } from '@electron-toolkit/preload'
 // Custom APIs for renderer
 const api = {
   getEnvironmentInformation: (): Promise<string> => ipcRenderer.invoke('get-environment-info'),
-  checkNetworkStatus: (): Promise<string> => ipcRenderer.invoke('check-network-status')
+  checkNetworkStatus: (): Promise<string> => ipcRenderer.invoke('check-network-status'),
+  writeHelloWorldTextFile: (): Promise<string> => ipcRenderer.invoke('write-file'),
+  readHelloWorldTextFile: (): Promise<string> => ipcRenderer.invoke('read-file')
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to

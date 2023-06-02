@@ -6,6 +6,8 @@ declare global {
     api: {
       getEnvironmentInformation: () => Promise<string>
       checkNetworkStatus: () => Promise<boolean>
+      writeHelloWorldTextFile: () => Promise<string>
+      readHelloWorldTextFile: () => Promise<string>
     }
   }
 }
