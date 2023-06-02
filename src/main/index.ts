@@ -2,7 +2,7 @@ import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-import { handleGetEnvironmentInformation } from './handlers'
+import { handleCheckNetworkStatus, handleGetEnvironmentInformation } from './handlers'
 
 function createWindow(): void {
   // Create the browser window.
@@ -44,6 +44,7 @@ app.whenReady().then(() => {
   electronApp.setAppUserModelId('com.electron')
 
   ipcMain.handle('get-environment-info', handleGetEnvironmentInformation)
+  ipcMain.handle('check-network-status', handleCheckNetworkStatus)
 
   // Default open or close DevTools by F12 in development
   // and ignore CommandOrControl + R in production.

@@ -5,6 +5,7 @@ declare global {
     electron: ElectronAPI
     api: {
       getEnvironmentInformation: () => Promise<string>
+      checkNetworkStatus: () => Promise<boolean>
     }
   }
 }

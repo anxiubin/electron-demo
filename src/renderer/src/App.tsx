@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 function App(): JSX.Element {
   const [environmentInfo, setEnvironmentInfo] = useState<string>('')
+  const [networkStatus, setNetworkStatus] = useState<boolean>(false)
 
   const handleSetEnvironmentInfo = async (): Promise<void> => {
     const result = await window.api.getEnvironmentInformation()
@@ -10,6 +11,13 @@ function App(): JSX.Element {
 
   useEffect(() => {
     handleSetEnvironmentInfo()
+
+    const interval = setInterval(async () => {
+      const networkStatus = await window.api.checkNetworkStatus()
+      setNetworkStatus(networkStatus)
+    }, 1000)
+
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -21,6 +29,15 @@ function App(): JSX.Element {
             <li key={el}>{el}</li>
           ))}
         </ul>
+      </section>
+      <br />
+      <section>
+        <h1>Network Status</h1>
+        {networkStatus ? (
+          <span style={{ color: 'green' }}>Online</span>
+        ) : (
+          <span style={{ color: 'red' }}>Offline</span>
+        )}
       </section>
     </div>
   )
