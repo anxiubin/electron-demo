@@ -2,6 +2,7 @@ import { IpcMainInvokeEvent } from 'electron'
 import { getEnvironmentInformation } from './environment'
 import { checkNetworkStatus } from './network'
 import { readHelloWorldTextFile, writeHelloWorldTextFile } from './file'
+import { crawlPokemon } from './crawl'
 
 export const handleGetEnvironmentInformation = (_event: IpcMainInvokeEvent): string => {
   return getEnvironmentInformation()
@@ -19,4 +20,8 @@ export const handleWriteHelloWorldTextFile = async (
 
 export const handleReadHelloWorldTextFile = async (_event: IpcMainInvokeEvent): Promise<string> => {
   return await readHelloWorldTextFile()
+}
+
+export const handleCrawlPokemon = async (_event: IpcMainInvokeEvent): Promise<string[]> => {
+  return await crawlPokemon()
 }

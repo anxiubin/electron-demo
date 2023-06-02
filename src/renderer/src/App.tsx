@@ -7,6 +7,7 @@ function App(): JSX.Element {
   const [fileWriteLoading, setFileWriteLoading] = useState<boolean>(false)
   const [fileText, setFileText] = useState<string>('')
   const [filePath, setFilePath] = useState<string>('')
+  const [crawledData, setCrawledData] = useState<string[]>()
 
   const handleSetEnvironmentInfo = async (): Promise<void> => {
     const result = await window.api.getEnvironmentInformation()
@@ -23,6 +24,11 @@ function App(): JSX.Element {
     setFileReadLoading(true)
     setFileText(await window.api.readHelloWorldTextFile())
     setFileReadLoading(false)
+  }
+
+  const handleCrawlPokemon = async (): Promise<void> => {
+    const result = await window.api.crawlPokemon()
+    setCrawledData(result)
   }
 
   useEffect(() => {
@@ -63,6 +69,18 @@ function App(): JSX.Element {
         <button onClick={handleClickReadTmpFile}>read /tmp file</button>
         <p>filePath: {fileWriteLoading ? 'Loading...' : filePath}</p>
         <p>fileText: {fileReadLoading ? 'Loading...' : fileText}</p>
+      </section>
+      <br />
+      <section>
+        <h1>Crawl Pokemon</h1>
+        <button onClick={handleCrawlPokemon}>Crawl Pokemon</button>
+        {crawledData && crawledData.length > 0 && (
+          <ul>
+            {crawledData.map((data, index) => (
+              <li key={index}>{data}</li>
+            ))}
+          </ul>
+        )}
       </section>
     </div>
   )

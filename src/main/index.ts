@@ -4,6 +4,7 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import {
   handleCheckNetworkStatus,
+  handleCrawlPokemon,
   handleGetEnvironmentInformation,
   handleReadHelloWorldTextFile,
   handleWriteHelloWorldTextFile
@@ -52,6 +53,7 @@ app.whenReady().then(() => {
   ipcMain.handle('check-network-status', handleCheckNetworkStatus)
   ipcMain.handle('read-file', handleReadHelloWorldTextFile)
   ipcMain.handle('write-file', handleWriteHelloWorldTextFile)
+  ipcMain.handle('crawl-pokemon', handleCrawlPokemon)
 
   // Default open or close DevTools by F12 in development
   // and ignore CommandOrControl + R in production.

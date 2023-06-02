@@ -8,6 +8,7 @@ declare global {
       checkNetworkStatus: () => Promise<boolean>
       writeHelloWorldTextFile: () => Promise<string>
       readHelloWorldTextFile: () => Promise<string>
+      crawlPokemon: () => Promise<string[]>
     }
   }
 }
