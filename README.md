@@ -37,5 +37,5 @@ $ npm run build:linux
 - [ ]  Execute auto updating
 - [x]  Crawl anything
 - [ ]  Release compressed files such as zip
-- [ ]  Use local DB such as local/session storage
-- [ ]  Let application run in the background
+- [x]  Use local DB such as local/session storage
+- [x]  Let application run in the background

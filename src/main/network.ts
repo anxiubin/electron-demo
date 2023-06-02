@@ -1,4 +1,5 @@
 import os from 'os'
+import { Notification } from 'electron'
 
 export const checkNetworkStatus = (): boolean => {
   const networkInterfaces = os.networkInterfaces()
@@ -12,6 +13,10 @@ export const checkNetworkStatus = (): boolean => {
         interfaceObject.mac !== '00:00:00:00:00:00' // 가상 네트워크 인터페이스 제외
     )
   )
+
+  if (!isOnline) {
+    new Notification({ title: 'Network Status', body: 'Offline' }).show()
+  }
 
   return isOnline
 }
