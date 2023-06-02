@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react'
 function App(): JSX.Element {
   const [environmentInfo, setEnvironmentInfo] = useState<string>('')
   const [networkStatus, setNetworkStatus] = useState<boolean>(false)
-  const [fileLoading, setFileLoading] = useState<boolean>(false)
+  const [fileReadLoading, setFileReadLoading] = useState<boolean>(false)
+  const [fileWriteLoading, setFileWriteLoading] = useState<boolean>(false)
   const [fileText, setFileText] = useState<string>('')
   const [filePath, setFilePath] = useState<string>('')
 
@@ -13,15 +14,15 @@ function App(): JSX.Element {
   }
 
   const handleClickWriteTmpFile = async (): Promise<void> => {
-    setFileLoading(true)
+    setFileWriteLoading(true)
     setFilePath(await window.api.writeHelloWorldTextFile())
-    setFileLoading(false)
+    setFileWriteLoading(false)
   }
 
   const handleClickReadTmpFile = async (): Promise<void> => {
-    setFileLoading(true)
+    setFileReadLoading(true)
     setFileText(await window.api.readHelloWorldTextFile())
-    setFileLoading(false)
+    setFileReadLoading(false)
   }
 
   useEffect(() => {
@@ -60,8 +61,8 @@ function App(): JSX.Element {
         <button onClick={handleClickWriteTmpFile}>write /tmp file</button>
         <br />
         <button onClick={handleClickReadTmpFile}>read /tmp file</button>
-        <p>filePath: {filePath}</p>
-        <p>fileText: {fileText}</p>
+        <p>filePath: {fileWriteLoading ? 'Loading...' : filePath}</p>
+        <p>fileText: {fileReadLoading ? 'Loading...' : fileText}</p>
       </section>
     </div>
   )

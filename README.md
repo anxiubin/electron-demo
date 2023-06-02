@@ -33,7 +33,7 @@ $ npm run build:linux
 - [x]  Use React
 - [x]  Get Environment information
 - [x]  Check network status in real time
-- [ ]  Read and write local files 
+- [x]  Read and write local files 
 - [ ]  Execute auto updating
 - [ ]  Crawl anything
 - [ ]  Release compressed files such as zip
