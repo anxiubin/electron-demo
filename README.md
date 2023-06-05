@@ -39,3 +39,4 @@ $ npm run build:linux
 - [ ]  Release compressed files such as zip
 - [x]  Use local DB such as local/session storage
 - [x]  Let application run in the background
+- [x]  Multi Platform build

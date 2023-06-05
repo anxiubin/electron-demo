@@ -2,6 +2,7 @@ appId: com.electron.app
 productName: electron-demo
 directories:
   buildResources: build
+  output: dist
 files:
   - '!**/.vscode/*'
   - '!src/*'
@@ -19,6 +20,9 @@ nsis:
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
   createDesktopShortcut: always
+  perMachine: true
+  allowToChangeInstallationDirectory: false
+  oneClick: false
 mac:
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:
