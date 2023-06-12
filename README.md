@@ -29,8 +29,19 @@ $ npm run build:mac
 $ npm run build:linux
 ```
 
+### Stacks
+- Electron
+- Electron-Vite
+- React
+- Tailwind CSS
+- css-module 
+- classnames
+- SCSS
+- Axios
+- TanStack Query
+- Zustand
+
 ### Features
-- [x]  Use React
 - [x]  Get Environment information
 - [x]  Check network status in real time
 - [x]  Read and write local files 
