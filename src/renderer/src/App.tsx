@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import './app/styles/index.scss'
 
 function App(): JSX.Element {
   const [environmentInfo, setEnvironmentInfo] = useState<string>('')
