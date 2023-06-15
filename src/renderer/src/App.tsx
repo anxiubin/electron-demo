@@ -56,7 +56,7 @@ function App(): JSX.Element {
   return (
     <div className="container">
       <section>
-        <h1>Environment Information</h1>
+        <h1 className="bg-guardians-PRIMARY_100">Environment Information</h1>
         <ul>
           {environmentInfo.split(',').map((el: string) => (
             <li key={el}>{el}</li>
