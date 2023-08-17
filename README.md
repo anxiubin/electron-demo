@@ -51,3 +51,6 @@ $ npm run build:linux
 - [x]  Use local DB such as local/session storage
 - [x]  Let application run in the background
 - [x]  Multi Platform build
+- [ ]  Use Storybook
+- [ ]  Use MSW
+- [ ]  Write test codes with Vitest
